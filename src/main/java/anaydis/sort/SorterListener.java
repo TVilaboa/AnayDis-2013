@@ -8,4 +8,8 @@ package anaydis.sort;
  * Time: 16:18
  */
 public interface SorterListener {
+
+    void greater(int i,int j);
+
+    void swap(int i,int j);
 }

@@ -8,4 +8,9 @@ package anaydis.sort;
  * Time: 16:15
  */
 public interface ObservableSorter {
+
+    void addSorterListener(SorterListener listener);
+
+    void removerSorterListener(SorterListener listener);
+
 }
