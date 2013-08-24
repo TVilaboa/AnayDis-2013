@@ -34,13 +34,13 @@ public class SelectionSorter extends AbstractSorter {
 
        for(int i=0;i<list.size();i++){
            int index=i;
-           for(int j=i+1;i<list.size();i++){
-               if(greater(comparator,list,index,j)){
+           for(int j=i+1;j<list.size();j++){
+               if(greater(comparator,list,j,index)){
                   index=j;
                }
 
            }
-           swap(list,index,i);
+           swap(list,i,index);
        }
     }
 

@@ -30,7 +30,15 @@ public class InsertionSorter extends AbstractSorter {
     }
 
     @Override
-    public <T> void sort(@NotNull Comparator<T> tComparator, @NotNull List<T> ts) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list) {
+       for(int i=1;i<list.size();i++){
+             for(int j=i;j>0;j--){
+                 if(greater(comparator,list,j,j-1)){
+                     swap(list,j-1,j);
+
+                 } else
+                     break;
+             }
+       }
     }
 }
