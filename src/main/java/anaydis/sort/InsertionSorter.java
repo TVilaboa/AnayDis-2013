@@ -8,16 +8,16 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * Author: Tomás Vilaboa
- * Project: anaydis-2013
- * Date: 22/08/13
- * Time: 16:12
+ * Project: AnayDis-2013
+ * Date: 23/08/13
+ * Time: 21:45
  */
-public class SelectionSorter extends AbstractSorter {
+public class InsertionSorter extends AbstractSorter {
 
-
-    public SelectionSorter() {
-        super(SorterType.SELECTION);
+    public InsertionSorter() {
+        super(SorterType.INSERTION);
     }
+
 
     @Override
     public void addSorterListener(SorterListener listener) {
@@ -30,18 +30,7 @@ public class SelectionSorter extends AbstractSorter {
     }
 
     @Override
-    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list) {
-
-       for(int i=0;i<list.size();i++){
-           int index=i;
-           for(int j=i+1;i<list.size();i++){
-               if(greater(comparator,list,index,j)){
-                  index=j;
-               }
-
-           }
-           swap(list,index,i);
-       }
+    public <T> void sort(@NotNull Comparator<T> tComparator, @NotNull List<T> ts) {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
-
 }
