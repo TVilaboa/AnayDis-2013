@@ -12,10 +12,10 @@ public class TestPracticaDos extends AbstractTestPracticaDos {
     }
 
     @Override protected DataSetGenerator<Integer> getIntegerDataSetGenerator() {
-        throw new IllegalStateException("To be implemented!");
+        return new IntDataSetGenerator();
     }
 
     @Override protected SorterProvider getSorterProvider() {
-        throw new IllegalStateException("To be implemented!");
+        return new SortProvider();
     }
 }
