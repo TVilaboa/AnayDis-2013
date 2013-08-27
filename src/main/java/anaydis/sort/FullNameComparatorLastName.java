@@ -12,6 +12,6 @@ import java.util.Comparator;
 public class FullNameComparatorLastName implements Comparator<FullName> {
     @Override
     public int compare(FullName o1, FullName o2) {
-        return o1.getLastname().compareTo(o2.getLastname());
+        return o2.getLastname().compareTo(o1.getLastname());
     }
 }
