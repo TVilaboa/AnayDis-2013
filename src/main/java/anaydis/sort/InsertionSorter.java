@@ -19,15 +19,7 @@ public class InsertionSorter extends AbstractSorter {
     }
 
 
-    @Override
-    public void addSorterListener(SorterListener listener) {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
 
-    @Override
-    public void removerSorterListener(SorterListener listener) {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
 
     @Override
     public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list) {

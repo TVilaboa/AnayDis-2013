@@ -25,7 +25,11 @@ public class TesteoBasicoSort {
         list.add(2);
         list.add(4);
         SelectionSorter selec=new SelectionSorter();
+        ConsoleSorterListener listener = new ConsoleSorterListener();
+        selec.addSorterListener(listener);
         selec.sort(new MyIntComparable(),list);
+        System.out.println("Se realizo " + listener.getGreater() + " comparaciones.");
+        System.out.println("Se realizo " + listener.getSwap() + " swaps");
         System.out.println("Selection Sorter");
         for(int i=0;i<list.size();i++){
             System.out.println(list.get(i));
@@ -57,6 +61,19 @@ public class TesteoBasicoSort {
         BubbleSorter bubble=new BubbleSorter();
         bubble.sort(new MyIntComparable(),list);
         System.out.println("Bubble Sorter");
+        for(int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+        IntDataSetGenerator intset=new IntDataSetGenerator();
+        list=intset.createAscending(8);
+        for(int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+        list=intset.createDescending(8);
+        for(int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+        list=intset.createRandom(8);
         for(int i=0;i<list.size();i++){
             System.out.println(list.get(i));
         }
