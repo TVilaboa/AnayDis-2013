@@ -29,4 +29,9 @@ public class OnlyCountsSorterListener implements SorterListener {
     public void swap(int i, int j) {
         swap++;
     }
+
+    public void reset(){
+        swap=0;
+        greater=0;
+    }
 }

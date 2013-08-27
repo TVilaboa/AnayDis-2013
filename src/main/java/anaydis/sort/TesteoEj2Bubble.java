@@ -5,18 +5,17 @@ package anaydis.sort;
  * Author: Tomás Vilaboa
  * Project: anaydis-2013
  * Date: 27/08/13
- * Time: 11:04
+ * Time: 11:51
  */
-public class TesteoEj2Insert {
-
-    static InsertionSorter insertionSorter = new InsertionSorter();
+public class TesteoEj2Bubble {
+    static BubbleSorter BubbleSorter = new BubbleSorter();
     static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
     static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
     static MyIntComparable intComparator=new MyIntComparable();
 
     public static void main(String[] args) {
 
-        insertionSorter.addSorterListener(countsInsert);
+        BubbleSorter.addSorterListener(countsInsert);
         testProm(10);
         testProm(50);
         testProm(100);
@@ -53,7 +52,7 @@ public class TesteoEj2Insert {
     private static void testProm(int n){
         countsInsert.reset();
         long time=System.currentTimeMillis();
-        insertionSorter.sort(intComparator, setGenerator.createRandom(n));
+        BubbleSorter.sort(intComparator, setGenerator.createRandom(n));
         System.out.println("Tardo " + (System.currentTimeMillis() - time) + " milisegundos en sortear " +
                 + n + " elementos en caso promedio" );
         System.out.println("Realizo " + countsInsert.getGreater() + " comparaciones.");
@@ -63,7 +62,7 @@ public class TesteoEj2Insert {
     private static void testMejor(int n){
         countsInsert.reset();
         long time=System.currentTimeMillis();
-        insertionSorter.sort(intComparator, setGenerator.createAscending(n));
+        BubbleSorter.sort(intComparator, setGenerator.createAscending(n));
         System.out.println("Tardo " + (System.currentTimeMillis() - time) + " milisegundos en sortear " +
                 + n + " elementos en caso mejor" );
         System.out.println("Realizo " + countsInsert.getGreater() + " comparaciones.");
@@ -73,7 +72,7 @@ public class TesteoEj2Insert {
     private static void testPeor(int n){
         countsInsert.reset();
         long time=System.currentTimeMillis();
-        insertionSorter.sort(intComparator, setGenerator.createDescending(n));
+        BubbleSorter.sort(intComparator, setGenerator.createDescending(n));
         System.out.println("Tardo " + (System.currentTimeMillis() - time) + " milisegundos en sortear " +
                 + n + " elementos en caso peor" );
         System.out.println("Realizo " + countsInsert.getGreater() + " comparaciones.");
