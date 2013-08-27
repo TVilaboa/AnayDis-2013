@@ -24,7 +24,7 @@ public class BubbleSorter extends AbstractSorter {
     public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list) {
         for(int i=list.size();i>0;i--){
             for(int j=0;j<i-1;j++){
-                if(greater(comparator,list,j+1,j))
+                if(greater(comparator,list,j,j+1))
                     swap(list,j,j+1);
 
             }

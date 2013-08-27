@@ -14,7 +14,7 @@ package anaydis.sort;
     public class MyIntComparable implements Comparator<Integer>{
 
         @Override
-        public int compare(Integer o1, Integer o2) {
+        public int compare(Integer o2, Integer o1) {
             return (o1>o2 ? -1 : (o1==o2 ? 0 : 1));
         }
     }
