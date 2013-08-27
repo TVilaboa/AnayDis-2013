@@ -31,6 +31,7 @@ public class SelectionSorter extends AbstractSorter {
                }
 
            }
+           if(i!=index)
            swap(list,i,index);
        }
     }
