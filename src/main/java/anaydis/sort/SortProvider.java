@@ -22,6 +22,8 @@ public class SortProvider implements SorterProvider {
             return new BubbleSorter();
         else if(type.equals(SorterType.SELECTION))
             return new SelectionSorter();
+        else if (type.equals(SorterType.H))
+            return new HSorter();
         else
             throw new IllegalArgumentException();
     }
