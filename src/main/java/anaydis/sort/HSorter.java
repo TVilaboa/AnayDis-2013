@@ -1,10 +1,13 @@
 package anaydis.sort;
 
+<<<<<<< HEAD
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Comparator;
 import java.util.List;
 
+=======
+>>>>>>> a24e4db1387aeccd6c382566b2023dd861d6f46f
 /**
  * Created with IntelliJ IDEA.
  * Author: Tomás Vilaboa
@@ -12,6 +15,7 @@ import java.util.List;
  * Date: 03/09/13
  * Time: 10:31
  */
+<<<<<<< HEAD
 public class HSorter extends AbstractSorter{
 
     public HSorter(){
@@ -35,3 +39,7 @@ public class HSorter extends AbstractSorter{
     }
 }
 
+=======
+public class HSorter {
+}
+>>>>>>> a24e4db1387aeccd6c382566b2023dd861d6f46f
