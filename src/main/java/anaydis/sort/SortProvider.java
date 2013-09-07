@@ -26,6 +26,8 @@ public class SortProvider implements SorterProvider {
             return new HSorter();
         else if(type.equals(SorterType.SHELL))
             return new ShellSorter();
+        else if(type.equals(SorterType.QUICK))
+            return new QuickSorter();
         else
             throw new IllegalArgumentException();
     }
