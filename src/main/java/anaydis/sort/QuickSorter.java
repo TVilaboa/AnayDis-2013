@@ -18,6 +18,10 @@ public class QuickSorter extends AbstractSorter {
         super(SorterType.QUICK);
     }
 
+    public QuickSorter(SorterType type) {
+        super(type);
+    }
+
     @Override
     public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list) {
         sort(comparator, list,0,list.size()-1);

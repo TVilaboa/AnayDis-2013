@@ -28,6 +28,8 @@ public class SortProvider implements SorterProvider {
             return new ShellSorter();
         else if(type.equals(SorterType.QUICK))
             return new QuickSorter();
+        else if(type.equals(SorterType.QUICK_MED_OF_THREE))
+            return new QuickSorterMedOfThree();
         else
             throw new IllegalArgumentException();
     }
