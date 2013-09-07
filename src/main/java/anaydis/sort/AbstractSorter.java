@@ -52,5 +52,7 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
         return  type;
     }
 
-
+    public List<SorterListener> getListeners() {
+        return listeners;
+    }
 }

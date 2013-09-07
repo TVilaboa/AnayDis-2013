@@ -27,7 +27,7 @@ public class QuickSorter extends AbstractSorter {
         sort(comparator, list,0,list.size()-1);
     }
 
-    private <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list,int l,int r){
+    protected <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list,int l,int r){
         if(l >= r)
             return;
         int i=partition(comparator,list,l,r);
@@ -35,7 +35,7 @@ public class QuickSorter extends AbstractSorter {
         sort(comparator,list,i+1,r);
     }
 
-    private <T> int partition(@NotNull Comparator<T> comparator, @NotNull List<T> list,int l,int r){
+    protected  <T> int partition(@NotNull Comparator<T> comparator, @NotNull List<T> list,int l,int r){
         pivot(comparator,list,l,r);
         int i=l;
         int j=r;

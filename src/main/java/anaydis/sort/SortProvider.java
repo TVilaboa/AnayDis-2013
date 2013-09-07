@@ -30,6 +30,8 @@ public class SortProvider implements SorterProvider {
             return new QuickSorter();
         else if(type.equals(SorterType.QUICK_MED_OF_THREE))
             return new QuickSorterMedOfThree();
+        else if (type.equals(SorterType.QUICK_CUT))
+            return new QuickSorterCutOff();
         else
             throw new IllegalArgumentException();
     }

@@ -15,7 +15,7 @@ package anaydis.sort;
 
         @Override
         public int compare(Integer o2, Integer o1) {
-            return (o1>o2 ? -1 : (o1==o2 ? 0 : 1));
+            return o2-o1;
         }
     }
 
