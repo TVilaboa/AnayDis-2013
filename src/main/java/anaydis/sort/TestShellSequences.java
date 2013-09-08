@@ -25,7 +25,7 @@ public class TestShellSequences {
     private static void test(ShellSorter shell, OnlyCountsSorterListener listener, IntDataSetGenerator intDataSetGenerator, int n) {
         long time=System.currentTimeMillis();
         System.out.println("Sort Sedgewick  " + n);
-        shell.sort(new MyIntComparable(), intDataSetGenerator.createRandom(n));
+        shell.sort(new MyIntComparable(), intDataSetGenerator.createRandom(n));  //Shellsort uses sedgeqick sequence as default
         System.out.println(System.currentTimeMillis() - time);
         System.out.println("Comparisons " + listener.getGreater());
         System.out.println("Swaps " + listener.getSwap());

@@ -85,35 +85,6 @@ public class Ejercicio3 {
         list.add(name19);
         list.add(name20);
         list.add(name21);
-        ShellSorter shell=new ShellSorter();
-        shell.sort(new FullNameComparatorLastName(),list);
-        shell.sort(new FullNameComparatorName(),list);
-        System.out.println("Shell");
-        for(int i=0;i<list.size();i++){
-            System.out.println(list.get(i));
-        }
-        list =new ArrayList<>();
-        list.add(name1);
-        list.add(name2);
-        list.add(name3);
-        list.add(name4);
-        list.add(name5);
-        list.add(name6);
-        list.add(name7);
-        list.add(name8);
-        list.add(name9);
-        list.add(name10);
-        list.add(name11);
-        list.add(name12);
-        list.add(name13);
-        list.add(name14);
-        list.add(name15);
-        list.add(name16);
-        list.add(name17);
-        list.add(name18);
-        list.add(name19);
-        list.add(name20);
-        list.add(name21);
         QuickSorter quick=new QuickSorter();
         quick.sort(new FullNameComparatorLastName(),list);
         quick.sort(new FullNameComparatorName(),list);
