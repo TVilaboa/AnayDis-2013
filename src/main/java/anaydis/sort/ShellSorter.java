@@ -31,6 +31,13 @@ public class ShellSorter extends AbstractSorter {
 
     }
 
+    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list,List<Integer> sequence) {
+        for(int i=sequence.size();i>0;i--){
+            hSorter.sort(comparator,list, sequence.get(i-1));
+        }
+
+    }
+
     private <T> List<Integer> sedgewickSequence(List<T> list) {
         List<Integer> sequence=new ArrayList<>();
         int h=1;
