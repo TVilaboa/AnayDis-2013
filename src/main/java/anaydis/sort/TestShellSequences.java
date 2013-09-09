@@ -20,6 +20,7 @@ public class TestShellSequences {
         test(shell, listener, intDataSetGenerator,100);
         test(shell, listener, intDataSetGenerator,1000);
         test(shell, listener, intDataSetGenerator,10000);
+        test(shell, listener, intDataSetGenerator,100000);
     }
 
     private static void test(ShellSorter shell, OnlyCountsSorterListener listener, IntDataSetGenerator intDataSetGenerator, int n) {
@@ -37,6 +38,13 @@ public class TestShellSequences {
         System.out.println("Comparisons " + listener.getGreater());
         System.out.println("Swaps " + listener.getSwap());
         listener.reset();
+        time=System.currentTimeMillis();
+        System.out.println("Sort Ciura  " + n);
+        shell.sort(new MyIntComparable(), intDataSetGenerator.createRandom(n),ciuraSequence(n));
+        System.out.println(System.currentTimeMillis() - time);
+        System.out.println("Comparisons " + listener.getGreater());
+        System.out.println("Swaps " + listener.getSwap());
+        listener.reset();
     }
 
     static private List<Integer> knuthSequence(int n){
@@ -48,6 +56,32 @@ public class TestShellSequences {
                 sequence.add(h);
             }
             return sequence;
+
+    }
+
+    static private List<Integer> ciuraSequence(int n){
+            List<Integer> sequence=new ArrayList<>();
+           List<Integer> definedSequence=new ArrayList<>();
+        definedSequence.add(1);
+        definedSequence.add(4);
+        definedSequence.add(10);
+        definedSequence.add(23);
+        definedSequence.add(57);
+        definedSequence.add(132);
+        definedSequence.add(301);
+        definedSequence.add(701);
+        for(int i=0;i<8;i++){
+            if(definedSequence.get(i) >= n)
+                break;
+            sequence.add(definedSequence.get(i));
+        }
+        int h=701;
+        while(h*2.25 < n){
+            h=(int)(h*2.25);
+            sequence.add(h);
+        }
+         return sequence;
+
 
     }
 }

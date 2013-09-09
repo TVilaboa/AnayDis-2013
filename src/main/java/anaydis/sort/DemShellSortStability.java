@@ -12,6 +12,10 @@ import java.util.List;
  */
 public class DemShellSortStability {
 
+
+    /*ShellSort is not stable, since adjacent values will be compared with nonadyacent values
+    on early passes and may be moved in different directions.
+     */
     public static void main(String[] args) {
         IntDataSetGenerator generator=new IntDataSetGenerator();
         List<DobleInt> list=new ArrayList<>();

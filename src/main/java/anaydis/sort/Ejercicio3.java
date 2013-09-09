@@ -12,6 +12,9 @@ import java.util.List;
  */
 public class Ejercicio3 {
 
+
+    /*QuickSort is not stable, since same value keys can be swaped with non adyacent values .
+     */
     public static void main(String[] args) {
         FullName name1=new FullName("Alonso","Paula");
         FullName name2=new FullName("Diaz","Diego");
