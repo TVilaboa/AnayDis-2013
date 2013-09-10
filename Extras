@@ -1,0 +1,3 @@
+			Practica 3
+1)c) El grafico corresponde a un QuickSort y lo que sucede es que al final quedan dos subarchivos que puede ser ordenados independientemente.
+3)b)Las secuencias se comportan de la forma esperada,aumentando de forma un poco mayor que una funcion linear,cercano a n^(3/2) y n^(4/3),sin embargo no se aprecia la diferencia entre las diferentes funciones de forma clara.

@@ -20,7 +20,7 @@ public class TestShellSequences {
         test(shell, listener, intDataSetGenerator,100);
         test(shell, listener, intDataSetGenerator,1000);
         test(shell, listener, intDataSetGenerator,10000);
-        test(shell, listener, intDataSetGenerator,100000);
+
     }
 
     private static void test(ShellSorter shell, OnlyCountsSorterListener listener, IntDataSetGenerator intDataSetGenerator, int n) {
