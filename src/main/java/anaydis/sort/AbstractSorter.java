@@ -1,5 +1,8 @@
 package anaydis.sort;
 
+import anaydis.sort.gui.ObservableSorter;
+import anaydis.sort.gui.SorterListener;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -16,8 +19,8 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
         listeners.add(listener);
     }
 
-    @Override
-    public void removerSorterListener(SorterListener listener) {
+
+    public void removeSorterListener(SorterListener listener) {
         listeners.remove(listener);
     }
 

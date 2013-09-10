@@ -1,5 +1,6 @@
 package anaydis.sort;
 
+import anaydis.sort.gui.SorterListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class ShellSorter extends AbstractSorter {
     }
 
     @Override
-    public void removerSorterListener(SorterListener listener) {
-        hSorter.removerSorterListener(listener);
+    public void removeSorterListener(SorterListener listener) {
+        hSorter.removeSorterListener(listener);
     }
 }

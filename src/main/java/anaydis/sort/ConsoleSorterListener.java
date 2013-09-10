@@ -1,5 +1,7 @@
 package anaydis.sort;
 
+import anaydis.sort.gui.SorterListener;
+
 /**
  * Created with IntelliJ IDEA.
  * Author: Tomás Vilaboa
@@ -8,6 +10,22 @@ package anaydis.sort;
  * Time: 10:18
  */
 public class ConsoleSorterListener implements SorterListener {
+
+
+    @Override
+    public void box(int from, int to) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void copy(int from, int to, boolean copyToAux) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void equals(int i, int j) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 
     int greater=0;
     int swap=0;

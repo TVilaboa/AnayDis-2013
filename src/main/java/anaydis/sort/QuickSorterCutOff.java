@@ -1,5 +1,6 @@
 package anaydis.sort;
 
+import anaydis.sort.gui.SorterListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Comparator;
@@ -26,12 +27,12 @@ public class QuickSorterCutOff extends QuickSorter {
 
 
     private <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r,int M) {
-        if(r-l >=M){
+        if(r-l <=M){
             InsertionSorter insert=new InsertionSorter();
             for(SorterListener listener : getListeners()){
                 insert.addSorterListener(listener);
             }
-            insert.sort(comparator,list);
+            insert.sort(comparator, list);
             return;
         }
         int i=partition(comparator,list,l,r);

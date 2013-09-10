@@ -3,7 +3,9 @@ package anaydis.sort;
 import anaydis.sort.provider.SorterProvider;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.EnumMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,8 +15,21 @@ import java.util.Iterator;
  * Time: 22:59
  */
 public class SortProvider implements SorterProvider {
+    private Map<SorterType, Sorter> sorters;
+
+    public SortProvider() {
+        sorters = new EnumMap<SorterType, Sorter>(SorterType.class);
+        addSorter(new InsertionSorter());
+        addSorter(new SelectionSorter());
+    }
+
+    private void addSorter(Sorter sorter) {
+        sorters.put(sorter.getType(), sorter);
+    }
+
     @NotNull
     @Override
+    //return del map
     public Sorter getSorterForType(@NotNull SorterType type) {
         if(type.equals(SorterType.INSERTION))
             return new InsertionSorter();
@@ -41,6 +56,6 @@ public class SortProvider implements SorterProvider {
     @NotNull
     @Override
     public Iterable<Sorter> getAllSorters() {
-       return null;
+       return sorters.values();
     }
 }
