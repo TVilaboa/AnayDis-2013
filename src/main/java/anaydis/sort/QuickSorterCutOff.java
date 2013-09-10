@@ -19,6 +19,11 @@ public class QuickSorterCutOff extends QuickSorter {
         super(SorterType.QUICK_CUT);
     }
 
+    @Override
+    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list) {
+        sort(comparator, list,0,list.size()-1);
+    }
+
 
     public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list,int M) {
         sort(comparator, list,0,list.size()-1,M);
@@ -40,7 +45,7 @@ public class QuickSorterCutOff extends QuickSorter {
         sort(comparator,list,i+1,r);
     }
      @Override
-    protected  <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r){
-         sort(comparator, list,0,list.size()-1,9);          //M default si no se elige un M particular
+    public  <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r){
+         sort(comparator, list,l,r,9);          //M default si no se elige un M particular
     }
 }

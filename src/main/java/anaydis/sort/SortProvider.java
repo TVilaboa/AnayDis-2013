@@ -21,6 +21,11 @@ public class SortProvider implements SorterProvider {
         sorters = new EnumMap<SorterType, Sorter>(SorterType.class);
         addSorter(new InsertionSorter());
         addSorter(new SelectionSorter());
+        addSorter(new BubbleSorter());
+        addSorter(new ShellSorter());
+        addSorter(new QuickSorter());
+        addSorter(new QuickSorterCutOff());
+        addSorter(new QuickSorterMedOfThree());
     }
 
     private void addSorter(Sorter sorter) {
@@ -31,26 +36,10 @@ public class SortProvider implements SorterProvider {
     @Override
     //return del map
     public Sorter getSorterForType(@NotNull SorterType type) {
-        if(type.equals(SorterType.INSERTION))
-            return new InsertionSorter();
-        else if(type.equals(SorterType.BUBBLE))
-            return new BubbleSorter();
-        else if(type.equals(SorterType.SELECTION))
-            return new SelectionSorter();
-        else if (type.equals(SorterType.H))
-            return new HSorter();
-        else if(type.equals(SorterType.SHELL))
-            return new ShellSorter();
-        else if(type.equals(SorterType.QUICK))
-            return new QuickSorter();
-        else if(type.equals(SorterType.QUICK_MED_OF_THREE))
-            return new QuickSorterMedOfThree();
-        else if (type.equals(SorterType.QUICK_CUT))
-            return new QuickSorterCutOff();
-        else if (type.equals(SorterType.QUICK_NON_RECURSIVE))
-            return new QuickSorterNonRecursive();
+        if(sorters.containsKey(type))
+            return sorters.get(type);
         else
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("To be implemented.");
     }
 
     @NotNull
