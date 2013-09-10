@@ -19,10 +19,14 @@ public class QuickSorterCutOff extends QuickSorter {
     }
 
 
+    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list,int M) {
+        sort(comparator, list,0,list.size()-1,M);
+    }
 
-    @Override
-    protected <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r) {
-        if(r-l >=9){
+
+
+    private <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r,int M) {
+        if(r-l >=M){
             InsertionSorter insert=new InsertionSorter();
             for(SorterListener listener : getListeners()){
                 insert.addSorterListener(listener);
@@ -33,5 +37,9 @@ public class QuickSorterCutOff extends QuickSorter {
         int i=partition(comparator,list,l,r);
         sort(comparator,list,l,i-1);
         sort(comparator,list,i+1,r);
+    }
+     @Override
+    protected  <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r){
+         sort(comparator, list,0,list.size()-1,9);          //M default si no se elige un M particular
     }
 }
