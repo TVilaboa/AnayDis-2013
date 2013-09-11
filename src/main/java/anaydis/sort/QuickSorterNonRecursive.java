@@ -24,6 +24,18 @@ public class QuickSorterNonRecursive extends QuickSorter {
         stack.push(l);
         stack.push(r);
         while (!stack.empty()){
+            r=stack.pop();
+            l=stack.pop ();
+            int i=partition(comparator,list,l,r);
+            if(r-(i+1) >0){
+            stack.push(i+1);
+            stack.push(r);
+            }
+            if((i-1)-l >0){
+            stack.push(l);
+            stack.push(i-1);
+            }
+
 
         }
     }
