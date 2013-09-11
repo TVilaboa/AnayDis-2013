@@ -17,13 +17,15 @@ public class InsertionSorter extends AbstractSorter {
     public InsertionSorter() {
         super(SorterType.INSERTION);
     }
-
-
-
-
     @Override
-    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list) {
-       for(int i=1;i<list.size();i++){
+    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list){
+            sort(comparator, list,0,list.size()-1);
+    }
+
+
+
+    public <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list,int l,int r) {
+       for(int i=l+1;i<=r;i++){
              for(int j=i;j>0;j--){
                  if(greater(comparator,list,j-1,j)){
                      swap(list,j-1,j);

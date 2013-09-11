@@ -37,7 +37,7 @@ public class QuickSorterCutOff extends QuickSorter {
             for(SorterListener listener : getListeners()){
                 insert.addSorterListener(listener);
             }
-            insert.sort(comparator, list);
+            insert.sort(comparator, list,l,r);
             return;
         }
         int i=partition(comparator,list,l,r);
@@ -46,6 +46,6 @@ public class QuickSorterCutOff extends QuickSorter {
     }
      @Override
     public  <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r){
-         sort(comparator, list,l,r,9);          //M default si no se elige un M particular
+         sort(comparator, list,l,r,23);          //M default si no se elige un M particular
     }
 }
