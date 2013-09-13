@@ -26,10 +26,10 @@ public class HSorter extends AbstractSorter{
     }
 
     protected <T> void sort(Comparator<T> comparator, List <T> list,int h){
-        for(int i=1;i<list.size();i+=h){
-            for(int j=i;j>0;j--){
-                if(greater(comparator,list,j-1,j)){
-                    swap(list,j-1,j);
+        for(int i=h;i<list.size();i++){
+            for(int j=i;j>=h;j-=h){
+                if(greater(comparator,list,j-h,j)){
+                    swap(list,j-h,j);
 
                 } else
                     break;
@@ -37,4 +37,3 @@ public class HSorter extends AbstractSorter{
         }
     }
 }
-

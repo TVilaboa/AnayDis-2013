@@ -43,10 +43,11 @@ public class ShellSorter extends AbstractSorter {
         List<Integer> sequence=new ArrayList<>();
         int h=1;
         sequence.add(1);
-        for(int i=1;h<list.size();i++){
+        for(int i=0;h<list.size();i++){
             h=(int)(Math.pow(4,i+1) + 3*Math.pow(2,i) +1);         //uses sedgewick sequence
             sequence.add(h);
         }
+        sequence.remove(sequence.size()-1);
         return sequence;
     }
 
