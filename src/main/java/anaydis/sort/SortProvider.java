@@ -27,6 +27,7 @@ public class SortProvider implements SorterProvider {
         addSorter(new QuickSorterCutOff());
         addSorter(new QuickSorterMedOfThree());
         addSorter(new QuickSorterNonRecursive());
+        addSorter(new QuickSorterThreeWayP());
     }
 
     private void addSorter(Sorter sorter) {
