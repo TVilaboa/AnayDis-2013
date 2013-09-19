@@ -14,6 +14,7 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
       private List<SorterListener> listeners=new ArrayList<>();
 
 
+
     @Override
     public void addSorterListener(SorterListener listener) {
         listeners.add(listener);
@@ -69,6 +70,17 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
         else
             return false;
 
+
+    }
+
+    protected <T> void copy(List<T> from,int i,int j,List<T> to,boolean copyToAux){
+        for(SorterListener listener: listeners){
+            listener.copy(i,j,copyToAux);
+        }
+        if(copyToAux)
+        to.add(j,from.get(i));
+        else
+            to.set(j,from.get(i));
 
     }
 }
