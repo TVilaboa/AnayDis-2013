@@ -27,7 +27,7 @@ public class QuickSorterThreeWayP extends QuickSorter {
             for(;i<q;i++){
                 if(greater(comparator,list,i,r))
                     break;
-                else if(comparator.compare(list.get(i),list.get(r))==0){
+                else if(equals(comparator,list,i,r)){
                     swap(list,i,p);
                     p++;
                 }
@@ -35,7 +35,7 @@ public class QuickSorterThreeWayP extends QuickSorter {
             for(;j>p;j--){
                 if(greater(comparator,list,r,j))
                     break;
-                else if(comparator.compare(list.get(j),list.get(r))==0){
+                else if(equals(comparator,list,j,r)){
                     swap(list,j,q);
                     q--;
                 }

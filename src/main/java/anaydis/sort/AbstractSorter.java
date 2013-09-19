@@ -58,4 +58,17 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
     public List<SorterListener> getListeners() {
         return listeners;
     }
+
+    protected <T> boolean equals(Comparator<T> c,List<T> list,int i,int j){
+        int diff=c.compare(list.get(i),list.get(j));
+        for(SorterListener listener: listeners){
+            listener.equals(i,j);
+        }
+        if(diff==0)
+            return true;
+        else
+            return false;
+
+
+    }
 }
