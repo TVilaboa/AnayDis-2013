@@ -16,7 +16,9 @@ import java.util.List;
 public class MergeSorterTopDown extends AbstractSorter {
 
 
-
+    public MergeSorterTopDown(SorterType type) {
+        super(type);
+    }
 
     public MergeSorterTopDown() {
         super(SorterType.MERGE);
@@ -37,7 +39,7 @@ public class MergeSorterTopDown extends AbstractSorter {
 
     }
 
-    private <T> void merge(Comparator<T> comparator, List<T> list, int lo, int m, int hi,List<T> aux) {
+    protected  <T> void merge(Comparator<T> comparator, List<T> list, int lo, int m, int hi,List<T> aux) {
         for(int i=lo;i<=m;i++){
             copy(list,i,i,aux,true);
         }
