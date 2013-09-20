@@ -1,4 +1,4 @@
-package anaydis.sort;
+package anaydis.analisys;
 
 import java.util.Comparator;
 
@@ -7,11 +7,11 @@ import java.util.Comparator;
  * Author: Tomás Vilaboa
  * Project: AnayDis-2013
  * Date: 26/08/13
- * Time: 22:06
+ * Time: 22:04
  */
-public class FullNameComparatorLastName implements Comparator<FullName> {
+public class FullNameComparatorName implements Comparator<FullName> {
     @Override
     public int compare(FullName o2, FullName o1) {
-        return o2.getLastname().compareTo(o1.getLastname());
+        return o2.getFirsname().compareTo(o1.getFirsname());
     }
 }

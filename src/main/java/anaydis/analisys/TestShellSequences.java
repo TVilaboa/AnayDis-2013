@@ -1,4 +1,9 @@
-package anaydis.sort;
+package anaydis.analisys;
+
+import anaydis.sort.IntDataSetGenerator;
+import anaydis.sort.MyIntComparable;
+import anaydis.sort.OnlyCountsSorterListener;
+import anaydis.sort.ShellSorter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,12 +13,10 @@ import java.util.List;
  * Date: 19/09/13
  * Time: 18:21
  */
-public class MergeSorterTopDown extends AbstractSorter {
+public class MergeSorterTopDown extends MergeSorter {
 
 
-    public MergeSorterTopDown(SorterType type) {
-        super(type);
-    }
+
 
     public MergeSorterTopDown() {
         super(SorterType.MERGE);
@@ -39,20 +37,5 @@ public class MergeSorterTopDown extends AbstractSorter {
 
     }
 
-    protected  <T> void merge(Comparator<T> comparator, List<T> list, int lo, int m, int hi,List<T> aux) {
-        for(int i=lo;i<=m;i++){
-            copy(list,i,i,aux,true);
-        }
-        for(int j=m+1;j<=hi;j++){
-            copy(list,hi-j+m+1,j,aux,true);
-        }
-        int i=lo,j=hi;
-        for(int k=lo;k<=hi;k++){
-            if(greater(comparator,aux,i,j))
-                copy(aux,j--,k,list,false);
-            else
-                copy(aux,i++,k,list,false);
-        }
 
-    }
 }

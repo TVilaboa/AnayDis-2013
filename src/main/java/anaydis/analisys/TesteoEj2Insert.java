@@ -1,21 +1,27 @@
-package anaydis.sort;
+package anaydis.analisys;
+
+import anaydis.sort.InsertionSorter;
+import anaydis.sort.IntDataSetGenerator;
+import anaydis.sort.MyIntComparable;
+import anaydis.sort.OnlyCountsSorterListener;
 
 /**
  * Created with IntelliJ IDEA.
  * Author: Tomás Vilaboa
  * Project: anaydis-2013
  * Date: 27/08/13
- * Time: 11:51
+ * Time: 11:04
  */
-public class TesteoEj2Bubble {
-    static BubbleSorter BubbleSorter = new BubbleSorter();
+public class TesteoEj2Insert {
+
+    static InsertionSorter insertionSorter = new InsertionSorter();
     static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
     static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
     static MyIntComparable intComparator=new MyIntComparable();
 
     public static void main(String[] args) {
 
-        BubbleSorter.addSorterListener(countsInsert);
+        insertionSorter.addSorterListener(countsInsert);
         testProm(10);
         testProm(50);
         testProm(100);
@@ -52,7 +58,7 @@ public class TesteoEj2Bubble {
     private static void testProm(int n){
         countsInsert.reset();
         long time=System.currentTimeMillis();
-        BubbleSorter.sort(intComparator, setGenerator.createRandom(n));
+        insertionSorter.sort(intComparator, setGenerator.createRandom(n));
         System.out.println("Tardo " + (System.currentTimeMillis() - time) + " milisegundos en sortear " +
                 + n + " elementos en caso promedio" );
         System.out.println("Realizo " + countsInsert.getGreater() + " comparaciones.");
@@ -62,7 +68,7 @@ public class TesteoEj2Bubble {
     private static void testMejor(int n){
         countsInsert.reset();
         long time=System.currentTimeMillis();
-        BubbleSorter.sort(intComparator, setGenerator.createAscending(n));
+        insertionSorter.sort(intComparator, setGenerator.createAscending(n));
         System.out.println("Tardo " + (System.currentTimeMillis() - time) + " milisegundos en sortear " +
                 + n + " elementos en caso mejor" );
         System.out.println("Realizo " + countsInsert.getGreater() + " comparaciones.");
@@ -72,7 +78,7 @@ public class TesteoEj2Bubble {
     private static void testPeor(int n){
         countsInsert.reset();
         long time=System.currentTimeMillis();
-        BubbleSorter.sort(intComparator, setGenerator.createDescending(n));
+        insertionSorter.sort(intComparator, setGenerator.createDescending(n));
         System.out.println("Tardo " + (System.currentTimeMillis() - time) + " milisegundos en sortear " +
                 + n + " elementos en caso peor" );
         System.out.println("Realizo " + countsInsert.getGreater() + " comparaciones.");

@@ -1,4 +1,7 @@
-package anaydis.sort;
+package anaydis.analisys;
+
+import anaydis.sort.InsertionSorter;
+import anaydis.sort.QuickSorter;
 
 import java.util.ArrayList;
 import java.util.List;

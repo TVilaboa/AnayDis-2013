@@ -1,4 +1,9 @@
-package anaydis.sort;
+package anaydis.analisys;
+
+import anaydis.sort.IntDataSetGenerator;
+import anaydis.sort.MyIntComparable;
+import anaydis.sort.OnlyCountsSorterListener;
+import anaydis.sort.SelectionSorter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,7 +14,7 @@ package anaydis.sort;
  */
 public class TesteoEj2Selection {
 
-    static SelectionSorter SelectionSorter = new SelectionSorter();
+    static anaydis.sort.SelectionSorter SelectionSorter = new SelectionSorter();
     static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
     static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
     static MyIntComparable intComparator=new MyIntComparable();

@@ -1,4 +1,8 @@
-package anaydis.sort;
+package anaydis.analisys;
+
+import anaydis.sort.IntDataSetGenerator;
+import anaydis.sort.MyIntComparable;
+import anaydis.sort.QuickSorterCutOff;
 
 import java.util.List;
 
@@ -21,12 +25,10 @@ public class QuickSorterMAnalisys {
     private static void test(int N) {
         QuickSorterCutOff quick=new QuickSorterCutOff();
         IntDataSetGenerator generator=new IntDataSetGenerator();
-        List<Integer> list;
         long recordTime=999999999;
         int m=0;
-        List<Integer> originalList=generator.createRandom(N);
         for(int i=5;i<=25;i++){
-            list=originalList.subList(0,N-1);
+            List<Integer> list=generator.createRandom(N);
             long time= System.currentTimeMillis();
             quick.sort(new MyIntComparable(),list,i);
             time= (System.currentTimeMillis()-time);

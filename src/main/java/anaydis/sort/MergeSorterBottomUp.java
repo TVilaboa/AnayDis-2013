@@ -13,7 +13,7 @@ import java.util.List;
  * Date: 19/09/13
  * Time: 20:14
  */
-public class MergeSorterBottomUp extends MergeSorterTopDown {
+public class MergeSorterBottomUp extends MergeSorter{
 
 
     public MergeSorterBottomUp() {

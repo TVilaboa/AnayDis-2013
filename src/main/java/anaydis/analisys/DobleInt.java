@@ -1,4 +1,4 @@
-package anaydis.sort;
+package anaydis.analisys;
 
 /**
  * Created with IntelliJ IDEA.

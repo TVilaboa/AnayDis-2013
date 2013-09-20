@@ -1,4 +1,4 @@
-package anaydis.sort;
+package anaydis.analisys;
 
 import java.util.Comparator;
 
@@ -7,11 +7,13 @@ import java.util.Comparator;
  * Author: Tomás Vilaboa
  * Project: AnayDis-2013
  * Date: 08/09/13
- * Time: 16:13
+ * Time: 16:11
  */
-public class DobleIntSegundoComparator implements Comparator<DobleInt> {
+public class DobleIntPrimeroComparator implements Comparator<DobleInt> {
+
+
     @Override
     public int compare(DobleInt o1, DobleInt o2) {
-        return o1.getSegundo()-o2.getSegundo();
+        return o1.getPrimero()-o2.getPrimero();
     }
 }

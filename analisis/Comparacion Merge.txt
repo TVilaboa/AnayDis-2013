@@ -1,0 +1,10 @@
+Para N=100 MERGE_BOTTOM_UP tarda 3 ms
+Para N=100 MERGE tarda 2 ms
+Para N=500 MERGE_BOTTOM_UP tarda 17 ms
+Para N=500 MERGE tarda 8 ms
+Para N=1000 MERGE_BOTTOM_UP tarda 18 ms
+Para N=1000 MERGE tarda 16 ms
+Para N=2500 MERGE_BOTTOM_UP tarda 146 ms
+Para N=2500 MERGE tarda 136 ms
+Para N=5000 MERGE_BOTTOM_UP tarda 740 ms
+Para N=5000 MERGE tarda 698 ms

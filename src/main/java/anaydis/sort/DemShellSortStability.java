@@ -1,5 +1,9 @@
 package anaydis.sort;
 
+import anaydis.analisys.DobleInt;
+import anaydis.analisys.DobleIntPrimeroComparator;
+import anaydis.analisys.DobleIntSegundoComparator;
+
 import java.util.ArrayList;
 import java.util.List;
 
