@@ -1,0 +1,8 @@
+trait MyMap[K,V] {
+    def get(k:K):V
+    def put (k:K,v:V):Unit
+    def size:Int
+    def isEmpty =size ==0
+    def contains(k:K):Boolean
+    def notfound(k:K)=throw new NoSuchElementException("Key $k not founded)
+}
