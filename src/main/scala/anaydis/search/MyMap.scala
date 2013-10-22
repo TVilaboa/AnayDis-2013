@@ -13,6 +13,6 @@ trait MyMap[K,V] {
   def size:Int
   def isEmpty =size ==0
   def contains(k:K):Boolean
-  def notFound(k:K)=throw new NoSuchElementException("Key $k not founded")
+  def notFound(k:K)=throw new NoSuchElementException(s"Key $k not founded")
 
 }

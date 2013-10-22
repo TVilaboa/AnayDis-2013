@@ -1,5 +1,7 @@
 package anaydis.search
 
+import scala.collection.immutable.Stack
+
 /**
  * Created with IntelliJ IDEA.
  * Author: Tomás Vilaboa
@@ -19,10 +21,27 @@ trait AbstractTreeMap[K,V] extends MyMap[K,V] {
       if(left!=null) size +=left.size; if (right!=null) size+=right.size
       size
     }
+
+    def nth(idx : Int):Node ={
+      if(this.size<idx) throw new NoSuchElementException(s"Index $idx does not exist.")
+      var counter=0
+       var stack=new Stack[Node]
+       var n=this
+       do{
+         if(n.right!=null) stack=stack.push(n.right)
+         if(n.left!=null) stack=stack.push(n.left)
+          counter+=1
+         n=stack.head
+         stack=stack.pop
+       }  while( counter !=idx-1)
+      n
+    }
+
+
   }
 
 
-  protected var head:Node = null
+   var head:Node = null
 
   def contains(k:K):Boolean = find(head,k) ==null
 

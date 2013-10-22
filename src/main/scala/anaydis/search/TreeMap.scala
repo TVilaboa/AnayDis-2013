@@ -17,6 +17,8 @@ class TreeMap [K <% Ordered[K],V] extends AbstractTreeMap[K,V]{
     else find (n.right,k)
   }
 
+
+
   def doPut(n:Node,k:K,v:V):Node = if(n==null) newLeaf(k,v)
   else {
     val cmp= k.compare(n.key)
