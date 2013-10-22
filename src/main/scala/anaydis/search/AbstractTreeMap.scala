@@ -29,11 +29,12 @@ trait AbstractTreeMap[K,V] extends MyMap[K,V] {
        var n=this
        do{
          if(n.right!=null) stack=stack.push(n.right)
+         stack=stack.push(Node(n.key,n.value))
          if(n.left!=null) stack=stack.push(n.left)
-          counter+=1
          n=stack.head
          stack=stack.pop
-       }  while( counter !=idx-1)
+         if(n.right==null && n.left==null) counter+=1
+       }  while( counter !=idx)
       n
     }
 
