@@ -17,7 +17,7 @@ object Main extends App{
   tree.put(4,"Asd4")
   println(tree)
   println(tree.size)
-  println(tree.head.nth(4))
-  println(tree.head.nth(5))
-  println(tree.head.nth(6))
+  println(tree.nth(3))
+  println(tree.nth(4))
+  println(tree.nth(5))
 }

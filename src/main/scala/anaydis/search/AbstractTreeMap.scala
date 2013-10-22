@@ -1,6 +1,8 @@
 package anaydis.search
 
 import scala.collection.immutable.Stack
+import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,26 +25,56 @@ trait AbstractTreeMap[K,V] extends MyMap[K,V] {
     }
 
     def nth(idx : Int):Node ={
-      if(this.size<idx) throw new NoSuchElementException(s"Index $idx does not exist.")
-      var counter=0
+      if(this.size<=idx) throw new NoSuchElementException(s"Index $idx does not exist.")
+      /*
+      val list=new ArrayBuffer[Node]
        var stack=new Stack[Node]
-       var n=this
-       do{
-         if(n.right!=null) stack=stack.push(n.right)
-         stack=stack.push(Node(n.key,n.value))
-         if(n.left!=null) stack=stack.push(n.left)
-         n=stack.head
-         stack=stack.pop
-         if(n.right==null && n.left==null) counter+=1
-       }  while( counter !=idx)
-      n
+       var n=head.left
+      stack=stack.push(head)
+      while(n!=null || stack.size !=0){
+        if(n!=null){
+          stack=stack.push(n)
+          n=n.left
+        } else{
+          n=stack.head
+        stack=stack.pop
+        list+=n
+        n=n.right
+        }
+      }
+      list(idx)     */
+      range(idx,idx)(0)
+
     }
 
+    def range(from:Int,to:Int):mutable.LinkedList[Node]={
+      var list = mutable.LinkedList[Node]()
+      var result = mutable.LinkedList[Node]()
+      if(this.size<from) throw new NoSuchElementException(s"Index $from does not exist.")
+      var stack=new Stack[Node]
+      var n=head.left
+      stack=stack.push(head)
+      while(n!=null || stack.size !=0){
+        if(n!=null){
+          stack=stack.push(n)
+          n=n.left
+        } else{
+          n=stack.head
+          stack=stack.pop
+          list=list.:+(n)
+          n=n.right
+        }
+      }
+      for(i <- from to to ){
+          result=result.:+(list(i))
+      }
+      result
+    }
 
   }
 
 
-   var head:Node = null
+   protected var head:Node = null
 
   def contains(k:K):Boolean = find(head,k) ==null
 
@@ -70,4 +102,5 @@ trait AbstractTreeMap[K,V] extends MyMap[K,V] {
 
 
   def size = if(head==null) 0 else head.size
+  def nth(idx:Int):Node=head.nth(idx)
 }
