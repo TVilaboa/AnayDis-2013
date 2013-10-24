@@ -13,16 +13,15 @@ import scala.collection.mutable.ArrayBuffer
  */
 trait AbstractTreeMap[K,V] extends MyMap[K,V] {
 
-  case class Node(key:K,var value:V,var left:Node =null,var right:Node =null){
+  case class Node(key:K,var value:V,var left:Node =null,var right:Node =null,var size:Int=1){
     override def toString:String = {
           s"{k:$key, v:$value, l:$left, r:$right}"
     }
 
-    def size:Int ={
-      var size=1
-      if(left!=null) size +=left.size; if (right!=null) size+=right.size
-      size
-    }
+
+    def updateSize= size=1+nodeSize(left) + nodeSize(right)
+
+    def nodeSize(n:Node)= if(n!=null)n.size else 0
 
     def nth(idx : Int):Node ={
       if(this.size<=idx) throw new NoSuchElementException(s"Index $idx does not exist.")

@@ -31,6 +31,7 @@ class ArrayMap[K,V] extends MyMap[K,V]{
       keys += k
       values += v
     } else values(i)=v
+
   }
 
   def contains(k:K): Boolean ={
