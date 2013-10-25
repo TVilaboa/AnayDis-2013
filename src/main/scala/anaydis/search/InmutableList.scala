@@ -16,9 +16,9 @@ trait List[+A] {
   def reverse={
      var result=Nil.prepend(head)
      var aux=new Cons(head,tail)
-      for(n <- 0 to size){
+      for(n <- 2 to size){
           result=result.prepend(aux.tail.head)
-        aux=new Cons[A](head,tail.tail)
+        aux=new Cons[A](head,aux.tail.tail)
       }
     result
   }
