@@ -8,16 +8,16 @@ package anaydis.search
  * Time: 16:30
  */
 trait List[+A] {
-        def prepend[B >: A](e:B): List[B] = new Cons(e,this)
+        def ::[B >: A](e:B): List[B] = new Cons(e,this)
     def head : A
   def tail : List[A]
   def size:Int
 
   def reverse={
-     var result=Nil.prepend(head)
+     var result=head :: Nil
      var aux=new Cons(head,tail)
       for(n <- 2 to size){
-          result=result.prepend(aux.tail.head)
+          result=aux.tail.head :: result
         aux=new Cons[A](head,aux.tail.tail)
       }
     result
@@ -36,8 +36,8 @@ case class Cons[A](head: A,tail:List[A]) extends List[A]{
 }
 
 object MainList extends App {
-  val foo: List[Int] = Nil.prepend(5).prepend(4).prepend(3)
+  val foo: List[Int] = Nil.::(5).::(4).::(3)
   println("foo" + foo)
-  val bar= foo.tail.prepend(2)
+  val bar= foo.tail.::(2)
   println("bar " + bar)
 }
