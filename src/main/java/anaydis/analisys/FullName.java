@@ -7,7 +7,7 @@ package anaydis.analisys;
  * Date: 26/08/13
  * Time: 20:16
  */
-public class FullName {
+class FullName {
        private String firsname;
     private String lastname;
 

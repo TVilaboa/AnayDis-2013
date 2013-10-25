@@ -18,7 +18,7 @@ public class SortProvider implements SorterProvider {
     private Map<SorterType, Sorter> sorters;
 
     public SortProvider() {
-        sorters = new EnumMap<SorterType, Sorter>(SorterType.class);
+        sorters = new EnumMap<>(SorterType.class);
         addSorter(new InsertionSorter());
         addSorter(new SelectionSorter());
         addSorter(new BubbleSorter());

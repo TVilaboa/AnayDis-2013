@@ -9,8 +9,8 @@ package anaydis.analisys;
  */
 public class DobleInt {
 
-    int primero;
-    int segundo;
+    private int primero;
+    private int segundo;
 
     public int getPrimero() {
         return primero;

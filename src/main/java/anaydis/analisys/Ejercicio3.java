@@ -66,8 +66,8 @@ public class Ejercicio3 {
         insert.sort(new FullNameComparatorLastName(),list);
         insert.sort(new FullNameComparatorName(),list);
         System.out.println("Insertion Sorter");
-        for(int i=0;i<list.size();i++){
-            System.out.println(list.get(i));
+        for (FullName aList1 : list) {
+            System.out.println(aList1);
         }
         list =new ArrayList<>();
         list.add(name1);
@@ -95,8 +95,8 @@ public class Ejercicio3 {
         quick.sort(new FullNameComparatorLastName(),list);
         quick.sort(new FullNameComparatorName(),list);
         System.out.println("Quick");
-        for(int i=0;i<list.size();i++){
-            System.out.println(list.get(i));
+        for (FullName aList : list) {
+            System.out.println(aList);
         }
     }
 }

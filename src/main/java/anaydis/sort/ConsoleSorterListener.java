@@ -9,7 +9,7 @@ import anaydis.sort.gui.SorterListener;
  * Date: 27/08/13
  * Time: 10:18
  */
-public class ConsoleSorterListener implements SorterListener {
+class ConsoleSorterListener implements SorterListener {
 
 
     @Override
@@ -27,8 +27,8 @@ public class ConsoleSorterListener implements SorterListener {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    int greater=0;
-    int swap=0;
+    private int greater=0;
+    private int swap=0;
 
     @Override
     public void greater(int i, int j) {

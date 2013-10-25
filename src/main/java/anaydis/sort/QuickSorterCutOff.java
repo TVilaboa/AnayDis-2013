@@ -45,7 +45,7 @@ public class QuickSorterCutOff extends QuickSorter {
         sort(comparator,list,i+1,r);
     }
      @Override
-    public  <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r){
+     protected <T> void sort(@NotNull Comparator<T> comparator, @NotNull List<T> list, int l, int r){
          sort(comparator, list,l,r,5);          //M default si no se elige un M particular
     }
 }

@@ -9,7 +9,7 @@ import java.util.Comparator;
  * Date: 26/08/13
  * Time: 22:04
  */
-public class FullNameComparatorName implements Comparator<FullName> {
+class FullNameComparatorName implements Comparator<FullName> {
     @Override
     public int compare(FullName o2, FullName o1) {
         return o2.getFirsname().compareTo(o1.getFirsname());

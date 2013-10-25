@@ -15,7 +15,7 @@ import java.util.List;
  * Time: 10:31
  */
 
-public class HSorter extends AbstractSorter{
+class HSorter extends AbstractSorter{
 
     public HSorter(){
         super(SorterType.H);
@@ -25,7 +25,7 @@ public class HSorter extends AbstractSorter{
               sort(comparator,list,1);
     }
 
-    protected <T> void sort(Comparator<T> comparator, List <T> list,int h){
+    <T> void sort(Comparator<T> comparator, List<T> list, int h){
         for(int i=h;i<list.size();i++){
             for(int j=i;j>=h;j-=h){
                 if(greater(comparator,list,j-h,j)){

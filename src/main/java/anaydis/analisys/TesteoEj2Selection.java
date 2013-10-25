@@ -14,10 +14,10 @@ import anaydis.sort.SelectionSorter;
  */
 public class TesteoEj2Selection {
 
-    static anaydis.sort.SelectionSorter SelectionSorter = new SelectionSorter();
-    static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
-    static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
-    static MyIntComparable intComparator=new MyIntComparable();
+    private static anaydis.sort.SelectionSorter SelectionSorter = new SelectionSorter();
+    private static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
+    private static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
+    private static MyIntComparable intComparator=new MyIntComparable();
 
     public static void main(String[] args) {
 

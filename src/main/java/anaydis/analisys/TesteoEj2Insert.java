@@ -14,10 +14,10 @@ import anaydis.sort.OnlyCountsSorterListener;
  */
 public class TesteoEj2Insert {
 
-    static InsertionSorter insertionSorter = new InsertionSorter();
-    static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
-    static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
-    static MyIntComparable intComparator=new MyIntComparable();
+    private static InsertionSorter insertionSorter = new InsertionSorter();
+    private static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
+    private static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
+    private static MyIntComparable intComparator=new MyIntComparable();
 
     public static void main(String[] args) {
 

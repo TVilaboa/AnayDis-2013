@@ -25,7 +25,7 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
         listeners.remove(listener);
     }
 
-    protected <T> void swap(List<T> list,int i,int j){
+    <T> void swap(List<T> list, int i, int j){
             T t=list.get(i);
             list.set(i,list.get(j));
             list.set(j,t);
@@ -34,7 +34,7 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
             }
     }
 
-    protected <T> boolean greater(Comparator<T> c,List<T> list,int i,int j){
+    <T> boolean greater(Comparator<T> c, List<T> list, int i, int j){
             int diff=c.compare(list.get(i),list.get(j));
         for(SorterListener listener: listeners){
             listener.greater(i,j);
@@ -48,7 +48,7 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
     }
 
 
-    protected AbstractSorter(SorterType type) {
+    AbstractSorter(SorterType type) {
         this.type = type;
     }
 
@@ -56,24 +56,21 @@ public abstract class AbstractSorter implements Sorter, ObservableSorter {
         return  type;
     }
 
-    public List<SorterListener> getListeners() {
+    List<SorterListener> getListeners() {
         return listeners;
     }
 
-    protected <T> boolean equals(Comparator<T> c,List<T> list,int i,int j){
+    <T> boolean equals(Comparator<T> c, List<T> list, int i, int j){
         int diff=c.compare(list.get(i),list.get(j));
         for(SorterListener listener: listeners){
             listener.equals(i,j);
         }
-        if(diff==0)
-            return true;
-        else
-            return false;
+        return diff == 0;
 
 
     }
 
-    protected <T> void copy(List<T> from,int i,int j,List<T> to,boolean copyToAux){
+    <T> void copy(List<T> from, int i, int j, List<T> to, boolean copyToAux){
         for(SorterListener listener: listeners){
             listener.copy(i,j,copyToAux);
         }

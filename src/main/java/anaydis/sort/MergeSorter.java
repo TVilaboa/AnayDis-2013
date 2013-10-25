@@ -12,7 +12,7 @@ import java.util.List;
  */
 abstract public class MergeSorter extends AbstractSorter {
 
-    protected  <T> void merge(Comparator<T> comparator, List<T> list, int lo, int m, int hi,List<T> aux) {
+    <T> void merge(Comparator<T> comparator, List<T> list, int lo, int m, int hi, List<T> aux) {
         for(int i=lo;i<=m;i++){
             copy(list,i,i,aux,true);
         }
@@ -29,7 +29,7 @@ abstract public class MergeSorter extends AbstractSorter {
 
     }
 
-    public MergeSorter(SorterType type) {
+    MergeSorter(SorterType type) {
         super(type);
     }
 }

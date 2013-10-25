@@ -25,7 +25,7 @@ trait ImmutableQueue[+A]{
 
 }
 
-case class ConsImmutableQueue[+A](val in:List[A],val out : List[A]) extends ImmutableQueue[A] {
+case class ConsImmutableQueue[+A](in:List[A],out : List[A]) extends ImmutableQueue[A] {
        def size=out.size + in.size
 
 }

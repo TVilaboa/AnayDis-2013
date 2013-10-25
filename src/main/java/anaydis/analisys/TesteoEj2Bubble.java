@@ -13,10 +13,10 @@ import anaydis.sort.OnlyCountsSorterListener;
  * Time: 11:51
  */
 public class TesteoEj2Bubble {
-    static anaydis.sort.BubbleSorter BubbleSorter = new BubbleSorter();
-    static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
-    static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
-    static MyIntComparable intComparator=new MyIntComparable();
+    private static anaydis.sort.BubbleSorter BubbleSorter = new BubbleSorter();
+    private static OnlyCountsSorterListener countsInsert=new OnlyCountsSorterListener();
+    private static IntDataSetGenerator setGenerator=new IntDataSetGenerator();
+    private static MyIntComparable intComparator=new MyIntComparable();
 
     public static void main(String[] args) {
 

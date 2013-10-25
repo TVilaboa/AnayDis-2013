@@ -15,7 +15,8 @@ import java.util.List;
  */
 public class QuickSorterThreeWayP extends QuickSorter {
 
-    int p,q;
+    private int p;
+    private int q;
 
     protected  <T> int partition(@NotNull Comparator<T> comparator, @NotNull List<T> list,int l,int r){
         pivot(comparator,list,l,r);
